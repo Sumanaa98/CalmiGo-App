@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AppProvider, AppContext } from "./context/AppContext";
 
 import Home from "./components/Home";
+import AuthChoice from "./components/AuthChoice";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -20,8 +21,11 @@ function Router() {
 
   if (!isLoggedIn) {
     if (page === "home") return <Home />;
+    if (page === "authChoice") return <AuthChoice />;
     if (page === "signup") return <Signup />;
-    return <Login />;
+    if (page === "login") return <Login />;
+
+    return <Home />;
   }
 
   if (parentMode) {
