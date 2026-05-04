@@ -68,11 +68,9 @@ const Login = () => {
 
       <form className="login-card" onSubmit={handleSubmit}>
         <h2>Welcome back</h2>
-
         <p className="form-subtext">
-          Demo login: <strong>parent</strong> / <strong>Calmigo123!</strong>
+          Log in to continue.
         </p>
-
         <label>Username</label>
         <input
           type="text"
