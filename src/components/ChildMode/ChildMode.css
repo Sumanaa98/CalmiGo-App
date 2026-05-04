@@ -3949,3 +3949,9 @@ button {
     width: min(92vw, 390px) !important;
   }
 }
+html,
+body,
+#root,
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
