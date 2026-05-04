@@ -1,55 +1,101 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 
+const demoUser = {
+  username: "parent",
+  password: "Calmigo123!",
+  childName: "Michael",
+  age: "8",
+  communicationStyles: ["Uses visuals", "Uses gestures or pointing"],
+  sensoryPreferences: ["Prefers quiet environments", "Sensitive to noise"],
+  supportNeeds: ["Needs visual supports", "Needs reassurance"],
+  isDemo: true,
+};
+
 const Login = () => {
-  const { setIsLoggedIn, setPage } = useContext(AppContext);
+  const {
+    setIsLoggedIn,
+    setPage,
+    setCurrentUser,
+    setParentMode,
+    setZone,
+    setActiveTab,
+  } = useContext(AppContext);
 
-  // # state: email input
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  // # submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email.trim()) {
+
+    const cleanUsername = username.trim();
+
+    if (cleanUsername === demoUser.username && password === demoUser.password) {
+      setCurrentUser(demoUser);
       setIsLoggedIn(true);
+      setParentMode(true);
+      setZone(null);
+      setActiveTab("Dashboard");
+      setError("");
+      return;
     }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const foundUser = users.find(
+      (user) => user.username === cleanUsername && user.password === password
+    );
+
+    if (foundUser) {
+      setCurrentUser(foundUser);
+      setIsLoggedIn(true);
+      setParentMode(true);
+      setZone(null);
+      setActiveTab("Dashboard");
+      setError("");
+      return;
+    }
+
+    setError("Incorrect username or password.");
   };
 
   return (
     <div className="login-screen">
-
-      {/* # app header / navigation back to home */}
       <div className="app-header" onClick={() => setPage("home")}>
         CalmiGo
       </div>
 
       <form className="login-card" onSubmit={handleSubmit}>
-
-        {/* # title */}
         <h2>Welcome back</h2>
 
-        {/* # supporting text */}
         <p className="form-subtext">
-          Log in to continue.
+          Demo login: <strong>parent</strong> / <strong>Calmigo123!</strong>
         </p>
 
-        {/* # input field */}
-        <label>Parent Email</label>
+        <label>Username</label>
         <input
-          type="email"
-          placeholder="you@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="parent"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
 
-        {/* # submit button */}
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="Calmigo123!"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
         <button type="submit">Log In</button>
 
-        {/* # navigation to signup */}
         <p className="form-link" onClick={() => setPage("signup")}>
           New here? Create an account
         </p>
-
       </form>
     </div>
   );

@@ -3978,3 +3978,104 @@ div {
   font-style: normal !important;
   letter-spacing: normal;
 }
+/* ---------- FINAL CHILDMODE MOBILE FIX ---------- */
+
+@media (max-width: 768px) {
+  .child-mode-home {
+    min-height: 100dvh !important;
+    height: auto !important;
+    overflow-y: auto !important;
+    padding: 86px 16px 40px !important;
+  }
+
+  .exit-btn {
+    top: 14px !important;
+    left: 14px !important;
+    padding: 10px 14px !important;
+    font-size: 15px !important;
+  }
+
+  .calm-toggle {
+    top: 14px !important;
+    right: 14px !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .parent-guide-btn {
+    top: 62px !important;
+    right: 14px !important;
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .emergency-bar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 54px !important;
+    margin: 28px auto 22px !important;
+    font-size: 17px !important;
+  }
+
+  .home-title {
+    margin: 0 0 24px !important;
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+
+  .zone-grid {
+    width: 100% !important;
+    max-width: 360px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .zone-btn {
+    width: 100% !important;
+    height: 128px !important;
+    font-size: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  .pretty-bg {
+    opacity: 0.45 !important;
+  }
+
+  .sun {
+    top: 120px !important;
+    left: 18px !important;
+    font-size: 54px !important;
+  }
+
+  .cloud-left {
+    top: 210px !important;
+    left: 8% !important;
+    font-size: 48px !important;
+  }
+
+  .cloud-right {
+    top: 185px !important;
+    right: 8% !important;
+    font-size: 48px !important;
+  }
+
+  .tree {
+    bottom: 20px !important;
+    left: 16px !important;
+    font-size: 78px !important;
+  }
+
+  .flowers {
+    bottom: 22px !important;
+    right: 18px !important;
+    font-size: 34px !important;
+  }
+
+  .butterfly {
+    display: none !important;
+  }
+}
