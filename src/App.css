@@ -1,10 +1,5 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
-
-body {
-  body {
-  font-family: "Nunito", sans-serif;}
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #e7f8e8;
@@ -821,49 +816,152 @@ body,
 * {
   font-family: Arial, Helvetica, sans-serif !important;
 }
-/* ---------- MOBILE DASHBOARD FIX ---------- */
+
+/* ---------- DESKTOP DASHBOARD: KEEP ORIGINAL ---------- */
+
+.sidebar {
+  background-color: #2e7d32;
+  color: white;
+  width: 250px;
+  padding: 2rem 1rem;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.main {
+  margin-left: 250px;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* ---------- MOBILE DASHBOARD: HAMBURGER MENU ---------- */
 
 @media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 3001;
+
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  }
+
   .sidebar {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 16px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: -290px !important;
+    width: 270px !important;
+    height: 100vh !important;
+    padding: 86px 18px 24px !important;
+    z-index: 3000 !important;
+    transition: left 0.25s ease;
+    box-shadow: 12px 0 30px rgba(0,0,0,0.25);
+  }
+
+  .sidebar.open {
+    left: 0 !important;
   }
 
   .sidebar h2 {
-    font-size: 24px !important;
-    margin-bottom: 12px !important;
+    font-size: 26px !important;
+    margin-bottom: 26px !important;
     text-align: center;
   }
 
   .sidebar ul {
     display: flex !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 
   .sidebar li {
     margin: 0 !important;
-    padding: 10px 14px !important;
-    border-radius: 12px !important;
-    font-size: 14px !important;
-    background: rgba(255, 255, 255, 0.12);
+    padding: 16px 18px !important;
+    border-radius: 16px !important;
+    font-size: 18px !important;
+    font-weight: 800;
+    background: rgba(255,255,255,0.12);
   }
 
   .sidebar li.active {
-    background: rgba(255, 255, 255, 0.28) !important;
-    box-shadow: none !important;
+    background: rgba(255,255,255,0.28) !important;
+    box-shadow: inset 5px 0 0 #a5d6a7 !important;
   }
 
-  .dashboard,
-  .main-content,
-  .content,
-  .dashboard-content {
+  .main {
     margin-left: 0 !important;
     width: 100% !important;
-    padding: 16px !important;
+    padding: 74px 14px 28px !important;
+  }
+
+  .topbar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    padding: 18px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .topbar span {
+    font-size: 22px !important;
+  }
+
+  .top-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .top-actions button,
+  .action-buttons button {
+    width: 100% !important;
+    margin: 0 !important;
+    min-height: 52px !important;
+    font-size: 18px !important;
+    border-radius: 14px !important;
+  }
+
+  .dashboard-grid,
+  .settings-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .card,
+  .settings-header-card,
+  .settings-card,
+  .settings-summary-card,
+  .settings-notes-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 18px !important;
+  }
+
+  .profile-card .avatar {
+    font-size: 58px !important;
   }
 
   body {

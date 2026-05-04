@@ -1,36 +1,51 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 
 const Sidebar = () => {
   const { activeTab, setActiveTab } = useContext(AppContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleClick = (tab) => {
+    setActiveTab(tab);
+    setMenuOpen(false);
+  };
 
   return (
-    <div className="sidebar">
-      <h2>🌿 CalmiGo</h2>
+    <>
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </button>
 
-      <ul>
-        <li
-          onClick={() => setActiveTab("Dashboard")}
-          className={activeTab === "Dashboard" ? "active" : ""}
-        >
-          Dashboard
-        </li>
+      <div className={`sidebar ${menuOpen ? "open" : ""}`}>
+        <h2>🌿 CalmiGo</h2>
 
-        <li
-          onClick={() => setActiveTab("Logs")}
-          className={activeTab === "Logs" ? "active" : ""}
-        >
-          Logs
-        </li>
+        <ul>
+          <li
+            onClick={() => handleClick("Dashboard")}
+            className={activeTab === "Dashboard" ? "active" : ""}
+          >
+            Dashboard
+          </li>
 
-        <li
-          onClick={() => setActiveTab("Settings")}
-          className={activeTab === "Settings" ? "active" : ""}
-        >
-          Settings
-        </li>
-      </ul>
-    </div>
+          <li
+            onClick={() => handleClick("Logs")}
+            className={activeTab === "Logs" ? "active" : ""}
+          >
+            Logs
+          </li>
+
+          <li
+            onClick={() => handleClick("Settings")}
+            className={activeTab === "Settings" ? "active" : ""}
+          >
+            Settings
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 
