@@ -4079,3 +4079,137 @@ div {
     display: none !important;
   }
 }
+/* ---------- FIX OVERSIZED MOBILE ACTIVITY SCREENS ---------- */
+
+@media (max-width: 768px) {
+  .activity-view {
+    align-items: flex-start !important;
+    padding: 70px 14px 110px !important;
+    overflow-y: auto !important;
+  }
+
+  .activity-view h2 {
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    margin: 10px 0 14px !important;
+  }
+
+  .yellow-tool-subtitle,
+  .green-tool-subtitle,
+  .blue-tool-subtitle,
+  .red-tool-subtitle {
+    font-size: 20px !important;
+    margin-bottom: 18px !important;
+    line-height: 1.25 !important;
+  }
+
+  .activity-content {
+    width: 100% !important;
+    max-width: 390px !important;
+    padding: 0 6px 90px !important;
+  }
+
+  .green-back-arrow,
+  .yellow-back-arrow,
+  .blue-back-arrow,
+  .red-back-arrow {
+    top: 54px !important;
+    left: 18px !important;
+    font-size: 36px !important;
+  }
+
+  .green-done-btn,
+  .yellow-done-btn,
+  .blue-done-btn,
+  .red-done-btn {
+    top: 54px !important;
+    right: 18px !important;
+    font-size: 16px !important;
+    padding: 12px 20px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Color Garden mobile resize */
+  .garden-coloring-page {
+    width: 100% !important;
+    max-width: 330px !important;
+    height: 360px !important;
+    margin: 16px auto 18px !important;
+    border-radius: 26px !important;
+  }
+
+  .garden-sun {
+    top: 28px !important;
+    right: 32px !important;
+    width: 82px !important;
+    height: 82px !important;
+    font-size: 40px !important;
+  }
+
+  .garden-tree {
+    top: 80px !important;
+    left: 42px !important;
+    width: 118px !important;
+    height: 118px !important;
+    font-size: 52px !important;
+  }
+
+  .garden-flower-one,
+  .garden-flower-two {
+    bottom: 70px !important;
+    width: 90px !important;
+    height: 90px !important;
+    font-size: 42px !important;
+  }
+
+  .garden-flower-one {
+    left: 45px !important;
+  }
+
+  .garden-flower-two {
+    right: 45px !important;
+  }
+
+  .garden-grass {
+    height: 58px !important;
+    font-size: 22px !important;
+  }
+
+  .garden-palette {
+    max-width: 310px !important;
+    gap: 12px !important;
+    margin: 14px auto 18px !important;
+  }
+
+  .garden-color-btn {
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Sensory Screen mobile resize */
+  .sensory-watch-box {
+    width: 100% !important;
+    max-width: 340px !important;
+    height: 300px !important;
+    margin: 20px auto !important;
+    border-radius: 28px !important;
+  }
+
+  .sensory-food {
+    font-size: 38px !important;
+  }
+
+  .activity-view .tool-instruction {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    margin: 20px 0 !important;
+  }
+
+  .help-btn {
+    bottom: 18px !important;
+    right: 14px !important;
+    padding: 14px 18px !important;
+    font-size: 16px !important;
+  }
+}
