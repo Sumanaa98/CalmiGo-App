@@ -10,6 +10,7 @@ const ActivityView = ({ activity, zone, onClose }) => {
   const [tapCount, setTapCount] = useState(0);
   const [color, setColor] = useState("#58D68D");
   const [drawing, setDrawing] = useState(false);
+  const [showNeeds, setShowNeeds] = useState(false);
 
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
