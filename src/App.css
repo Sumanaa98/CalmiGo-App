@@ -1,38 +1,814 @@
-.App {
+/* App.css – CalmiGo Full Redesign */
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e7f8e8;
+  color: #1d4220;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: #1f1f1f;
+  color: #f2f2f2;
+}
+
+h1.title {
+  font-size: 3rem;
+  margin: 1rem;
+  color: #216c39;
+}
+
+/* ---------- HOME SCREEN ---------- */
+
+.home-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+
+  /* soft calming gradient */
+  background: linear-gradient(135deg, #e7f8e8, #d9f2dc);
+}
+
+/* Main card */
+.home-content {
+  max-width: 520px;
+  width: 100%;
+
+  /* soft glass effect */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+
+  padding: 2.5rem;
+  border-radius: 20px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* gentle entrance */
+  animation: fadeIn 0.8s ease;
+}
+
+/* icon */
+.home-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* title */
+.home-content h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.8rem;
+  color: #2e7d32;
+}
+
+/* main message */
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  color: #2e7d32;
+  line-height: 1.5;
+}
+
+/* buttons layout */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* primary button */
+button.primary {
+  background-color: #2e7d32;
+  color: white;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* secondary button */
+button.secondary {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-size: 1rem;
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* gentle hover (not overstimulating) */
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* accessibility focus */
+button:focus {
+  outline: 3px solid #a5d6a7;
+  outline-offset: 2px;
+}
+
+/* reassurance text */
+.reassurance {
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* calm fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- DARK MODE SUPPORT ---------- */
+
+body.dark .home-screen {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+}
+
+body.dark .home-content {
+  background: rgba(44, 44, 44, 0.9);
+  color: #f2f2f2;
+}
+
+body.dark .tagline {
+  color: #a5d6a7;
+}
+
+body.dark button.secondary {
+  background-color: #3a3a3a;
+  color: #a5d6a7;
+}
+/* ---------- LOGIN & SIGNUP SCREEN ---------- */
+/* # shared screen */
+.login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #e7f8e8, #d9f2dc);
+  position: relative;
+}
+
+/* # header */
+.app-header {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2e7d32;
+  cursor: pointer;
+}
+
+/* # card */
+.login-card {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+/* # headings */
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+}
+
+.login-card h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* # text */
+.form-subtext {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.75;
+}
+
+.helper-text {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 0.6rem;
+}
+
+/* # inputs */
+.login-card input {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+}
+
+/* # container */
+.checkbox-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+/* # each row (FIXED LAYOUT) */
+.checkbox-item {
+  display: grid;
+  grid-template-columns: 20px 1fr; /* checkbox + text */
+  align-items: start;
+
+  gap: 10px;
+
+  background: #f3f8f4;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* # hover */
+.checkbox-item:hover {
+  background: #eaf5ec;
+}
+
+/* # checkbox */
+.checkbox-item input {
+  margin-top: 3px;
+  transform: scale(1.1);
+}
+
+/* # text (CRITICAL FIX) */
+.checkbox-text {
+  text-align: left;
+  line-height: 1.3;
+
+  /* 🔥 prevents weird wrapping */
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* # selected */
+.checkbox-item:has(input:checked) {
+  background: #dff1e3;
+  border: 1px solid #b7e0c2;
+}
+/* review list */
+.login-card ul {
+  margin: 0.5rem 0 1rem 1rem;
+  padding-left: 1rem;
+}
+
+.login-card li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+/* # back row (subtle, not button-like) */
+.back-row {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+
+  font-size: 0.9rem;
+  color: #2e7d32;
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.back-row:hover {
+  opacity: 1;
+}
+/* # buttons */
+.login-card button {
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* # secondary button (auth choice) */
+button.secondary {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* # button group (auth choice page) */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+/* # links */
+.form-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #2e7d32;
+  cursor: pointer;
+}
+
+/* # responsive */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ---------- SHARED ---------- */
+.zone-select, .toolbox, .dashboard {
+  text-align: center;
+  padding: 2rem;
+}
+
+button {
+  background-color: #2d9c5c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 8px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #257d49;
+}
+
+/* ---------- DASHBOARD ---------- */
+.sidebar {
+  background-color: #2e7d32;
+  color: white;
+  width: 250px;
+  padding: 2rem 1rem;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+/* make list items feel like buttons */
+.sidebar li {
+  margin: 12px 0;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+/* hover */
+.sidebar li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ACTIVE STATE */
+.sidebar li.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+
+  /* nice left highlight bar */
+  box-shadow: inset 4px 0 0 #a5d6a7;
+}
+
+/* press effect */
+.sidebar li:active {
+  transform: scale(0.96);
+}
+
+.main {
+  margin-left: 250px;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.dark .card {
+  background-color: #2c2c2c;
+  color: #f2f2f2;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.topbar span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.top-actions button {
+  margin-left: 10px;
+}
+
+/* ---------- DASHBOARD GRID ---------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 1.4rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- PROFILE ---------- */
+.profile-card {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.profile-card .avatar {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.profile-card h3 {
+  margin-bottom: 0.3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ---------- TAGS ---------- */
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 0.6rem;
+  justify-content: center;
+}
+
+.tag {
+  background: #e7f8e8;
+  color: #2e7d32;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.tag.soft {
+  background: #f3f8f4;
+}
+
+/* ---------- ACTIONS ---------- */
+.action-buttons {
   display: flex;
   flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.action-buttons button {
+  width: 100%;
+}
+
+/* ---------- LOGS ---------- */
+.logs-card ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.logs-card li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- TIPS ---------- */
+.tips-card {
+  background: #f6fff6;
+  border-left: 5px solid #2e7d32;
+}
+
+/* ---------- DARK MODE ---------- */
+body.dark .card {
+  background: #2c2c2c;
+  color: #f2f2f2;
+}
+
+body.dark .tag {
+  background: #3a3a3a;
+  color: #a5d6a7;
+}
+
+/* ---------- LOGS CONTAINER ---------- */
+.logs-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- LIST ---------- */
+.logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* ---------- CARD ---------- */
+.log-card {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+
+  background: white;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.App-link {
-  color: #61dafb;
+/* ---------- ZONE INDICATOR ---------- */
+.zone-indicator {
+  min-width: 60px;
+  text-align: center;
+  font-weight: bold;
+  padding: 6px 0;
+  border-radius: 8px;
+  font-size: 0.8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* zone colours */
+.zone-indicator.red {
+  background: #fdecea;
+  color: #c62828;
+}
+
+.zone-indicator.yellow {
+  background: #fff8e1;
+  color: #f9a825;
+}
+
+.zone-indicator.blue {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.zone-indicator.green {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* ---------- TEXT ---------- */
+.log-content {
+  flex: 1;
+}
+
+.log-tool {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.log-date {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin: 0;
+}
+/* ---------- SETTINGS PAGE ---------- */
+.settings-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.settings-header-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.settings-header-card h2 {
+  margin: 0 0 0.3rem 0;
+  color: #2e7d32;
+}
+
+.settings-subtext {
+  margin: 0;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.settings-card,
+.settings-summary-card,
+.settings-notes-card {
+  height: fit-content;
+}
+
+.settings-section-text {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  opacity: 0.75;
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.settings-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #f5faf6;
+  border: 1px solid #e2efe4;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+}
+
+.settings-option-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.settings-option-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.settings-option-desc {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+.settings-option input[type="checkbox"] {
+  margin-top: 0.2rem;
+  transform: scale(1.15);
+  flex-shrink: 0;
+}
+
+.settings-summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #edf4ee;
+}
+
+.summary-label {
+  opacity: 0.7;
+}
+
+.summary-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+.settings-note-list {
+  margin: 0.8rem 0 0 1rem;
+  padding-left: 1rem;
+}
+
+.settings-note-list li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.settings-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.settings-saved-message {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* ---------- SETTINGS DARK MODE ---------- */
+body.dark .settings-header-card {
+  background: #2c2c2c;
+  color: #f2f2f2;
+}
+
+body.dark .settings-option {
+  background: #363636;
+  border-color: #4a4a4a;
+}
+
+body.dark .summary-row {
+  border-bottom-color: #444;
+}
+
+
+/* ----------  ---------- */
+.active-tool iframe,
+.active-tool audio {
+  margin-top: 1rem;
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.bubble-animation {
+  width: 100%;
+  height: 300px;
+  background: radial-gradient(circle, #99d9ea 10%, transparent 11%) center/20px 20px repeat;
+  animation: breathe 2s infinite alternate ease-in-out;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.back-btn, .exit-btn {
+  background-color: #555;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.back-btn:hover, .exit-btn:hover {
+  background-color: #444;
 }
