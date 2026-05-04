@@ -3955,3 +3955,26 @@ body,
 * {
   font-family: Arial, Helvetica, sans-serif !important;
 }
+/* ---------- FINAL FONT FIX ---------- */
+
+html,
+body,
+#root,
+.App,
+.child-mode-home,
+.zone-screen,
+.activity-view,
+button,
+input,
+textarea,
+select,
+h1,
+h2,
+h3,
+p,
+span,
+div {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-style: normal !important;
+  letter-spacing: normal;
+}
