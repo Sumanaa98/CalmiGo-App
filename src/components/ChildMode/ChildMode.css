@@ -3978,3 +3978,305 @@ div {
   font-style: normal !important;
   letter-spacing: normal;
 }
+/* ---------- FINAL MOBILE APP LAYOUT ---------- */
+
+@media (max-width: 700px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .child-mode-home {
+    min-height: 100dvh !important;
+    height: auto !important;
+    padding: 96px 16px 32px !important;
+    overflow-y: auto !important;
+  }
+
+  .exit-btn {
+    top: 12px !important;
+    left: 12px !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+  }
+
+  .calm-toggle {
+    top: 12px !important;
+    right: 12px !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .parent-guide-btn {
+    top: 58px !important;
+    right: 12px !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .emergency-bar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 54px !important;
+    margin: 0 0 22px !important;
+    font-size: 17px !important;
+    border-radius: 16px !important;
+  }
+
+  .home-title {
+    margin: 0 0 22px !important;
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+
+  .zone-grid {
+    width: 100% !important;
+    max-width: 360px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .zone-btn {
+    width: 100% !important;
+    height: 130px !important;
+    border-radius: 22px !important;
+    font-size: 19px !important;
+    line-height: 1.1 !important;
+  }
+
+  .pretty-bg {
+    opacity: 0.35;
+  }
+
+  .sun {
+    top: 84px !important;
+    left: 12px !important;
+    font-size: 58px !important;
+  }
+
+  .cloud,
+  .tree,
+  .flowers,
+  .butterfly {
+    display: none !important;
+  }
+
+  .zone-screen {
+    min-height: 100dvh !important;
+    height: auto !important;
+    padding: 40px 16px 110px !important;
+    overflow-y: auto !important;
+  }
+
+  .zone-title {
+    font-size: 34px !important;
+  }
+
+  .zone-message {
+    font-size: 17px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .activity-grid {
+    width: 100% !important;
+    max-width: 360px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .activity-card {
+    width: 100% !important;
+    height: 132px !important;
+    border-radius: 22px !important;
+  }
+
+  .activity-symbol {
+    font-size: 34px !important;
+  }
+
+  .card-label {
+    font-size: 16px !important;
+    max-width: 110px !important;
+  }
+
+  .zones-back-btn {
+    width: 118px !important;
+    height: 58px !important;
+    bottom: 14px !important;
+  }
+
+  .activity-view.red,
+  .activity-view.yellow,
+  .activity-view.blue,
+  .activity-view.green {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    padding: 76px 16px 100px !important;
+    overflow-y: auto !important;
+  }
+
+  .activity-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0 80px !important;
+  }
+
+  .activity-view h2 {
+    font-size: 34px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .red-tool-subtitle,
+  .yellow-tool-subtitle,
+  .blue-tool-subtitle,
+  .green-tool-subtitle {
+    font-size: 17px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .tool-instruction,
+  .activity-view .tool-instruction {
+    font-size: 17px !important;
+    margin: 18px 0 !important;
+  }
+
+  .red-back-arrow,
+  .yellow-back-arrow,
+  .blue-back-arrow,
+  .green-back-arrow {
+    top: 12px !important;
+    left: 12px !important;
+    font-size: 34px !important;
+  }
+
+  .red-done-btn,
+  .yellow-done-btn,
+  .blue-done-btn,
+  .green-done-btn {
+    top: 14px !important;
+    right: 12px !important;
+    padding: 10px 18px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .help-btn {
+    bottom: 14px !important;
+    right: 14px !important;
+    padding: 12px 14px !important;
+    font-size: 14px !important;
+  }
+
+  .blue-sun-game,
+  .red-tap-button,
+  .yellow-tap-button,
+  .green-tap-button {
+    width: 180px !important;
+    height: 180px !important;
+    font-size: 64px !important;
+    margin: 18px auto !important;
+  }
+
+  .blue-bubble-area,
+  .yellow-bubble-area,
+  .green-bubble-area {
+    max-width: 320px !important;
+    gap: 12px !important;
+    margin: 20px auto !important;
+  }
+
+  .blue-wake-bubble,
+  .yellow-slow-bubble,
+  .green-bubble {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .blue-star-catch-grid,
+  .blue-color-smash-grid,
+  .yellow-maze,
+  .green-match-grid {
+    grid-template-columns: repeat(3, 82px) !important;
+    gap: 10px !important;
+    margin: 18px auto !important;
+  }
+
+  .blue-star-cell,
+  .blue-color-smash-tile,
+  .yellow-maze-cell,
+  .green-match-card {
+    width: 82px !important;
+    height: 82px !important;
+    font-size: 32px !important;
+    border-radius: 18px !important;
+  }
+
+  .blue-energy-meter {
+    height: 220px !important;
+    width: 100px !important;
+  }
+
+  .feeling-slider {
+    max-width: 100% !important;
+    padding-bottom: 10px !important;
+  }
+
+  .slider-feeling-card {
+    min-width: 72px !important;
+    height: 68px !important;
+  }
+
+  .slider-emoji {
+    font-size: 30px !important;
+  }
+
+  .communication-card {
+    width: 100% !important;
+    margin: 12px auto 40px !important;
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .communication-card h3 {
+    font-size: 19px !important;
+  }
+
+  .communication-emoji {
+    font-size: 56px !important;
+  }
+
+  .needs-slider {
+    grid-template-columns: 1fr !important;
+  }
+
+  .need-card {
+    min-height: 50px !important;
+    font-size: 15px !important;
+  }
+
+  .emergency-focus-screen {
+    min-height: 100dvh !important;
+    padding: 80px 18px 40px !important;
+  }
+
+  .emergency-focus-screen h2 {
+    font-size: 40px !important;
+  }
+
+  .emergency-focus-screen p {
+    font-size: 20px !important;
+  }
+
+  .emergency-focus-circle {
+    width: 240px !important;
+    height: 240px !important;
+    font-size: 48px !important;
+  }
+}
