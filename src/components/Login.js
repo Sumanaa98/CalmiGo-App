@@ -82,7 +82,7 @@ const Login = () => {
         <label>Password</label>
         <input
           type="Enter password"
-          placeholder="Calmigo123!"
+          placeholder="Enter Password!"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
